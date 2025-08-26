@@ -1,0 +1,21 @@
+modules:
+  jira:adminPage:
+    - key: github-admin-hello-world-admin-page
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: github-admin
+#      useAsConfig: true
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs22.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/52b2ea38-e847-4da6-9ef8-1e94de859c21
