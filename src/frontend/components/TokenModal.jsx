@@ -16,12 +16,10 @@ import React, {useState} from "react";
 // `useForm` internal state should be in it's own component so that it can reset it's internal state when it unmounts via the modal closing
 const FormInModal = ({onClose, onSaveToken}) => {
     const { handleSubmit, getFieldId, register } = useForm();
-    const [token, setToken] = useState("");
 
     const onSubmit = handleSubmit((data) => {
         const tokenPart = data.token.substring(0,3);
         console.log(`Saving token ${tokenPart}...` );
-        setToken(data.token);
         onClose();
         onSaveToken(data.token);
     });

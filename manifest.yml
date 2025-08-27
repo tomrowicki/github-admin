@@ -19,3 +19,8 @@ app:
     memoryMB: 256
     architecture: arm64
   id: ari:cloud:ecosystem::app/52b2ea38-e847-4da6-9ef8-1e94de859c21
+permissions:
+  external:
+    fetch:
+      backend:
+        - 'https://api.github.com'
