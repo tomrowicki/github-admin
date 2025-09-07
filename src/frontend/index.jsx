@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import ForgeReconciler, {Text} from '@forge/react';
 import {invoke} from '@forge/bridge';
 import TokenModal from "./components/TokenModal";
-import Repos from "./components/Repos";
+import ReposTable from "./components/ReposTable";
 
 const App = () => {
     const [token, setToken] = useState(null);
@@ -18,7 +18,7 @@ const App = () => {
             {token && (
                 <Text>Token: {token.substring(0, 3)}</Text>
             )}
-            {reposData && token && <Repos reposData={reposData.data}></Repos>}
+            {reposData && token && <ReposTable reposData={reposData.data}/>}
         </>
     );
 };
